@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  //using ref to get the dom elements
   const ref = useRef(null);
   const refLeft = useRef(null);
   const refTop = useRef(null);
@@ -10,12 +11,14 @@ function App() {
 
   useEffect(() => {
     const resizeableEle = ref.current;
+    //getting the style of resizeable div
     const styles = window.getComputedStyle(resizeableEle);
+    //getting the width and height of resizeable div
     let width = parseInt(styles.width, 10);
     let height = parseInt(styles.height, 10);
     let x = 0;
     let y = 0;
-
+    //setting the resizeable element little away from the parent div
     resizeableEle.style.top = "50px";
     resizeableEle.style.left = "50px";
 
